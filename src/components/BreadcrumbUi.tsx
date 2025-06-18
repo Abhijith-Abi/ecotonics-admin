@@ -37,7 +37,7 @@ function BreadcrumbUi() {
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                        <Link href="/">Home</Link>
+                        <Link href="/">Dashboard</Link>
                     </BreadcrumbLink>
                 </BreadcrumbItem>
 
