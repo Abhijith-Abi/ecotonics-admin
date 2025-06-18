@@ -15,13 +15,17 @@ import {
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
 import { SidebarTrigger } from "./ui/sidebar";
+import BreadcrumbUi from "./BreadcrumbUi";
 
 function Navbar() {
     const { setTheme } = useTheme();
 
     return (
         <nav className="flex p-4 itens-center justify-between">
-            <SidebarTrigger />
+            <div className="flex gap-4 items-center justify-center">
+                <SidebarTrigger />
+                <BreadcrumbUi />
+            </div>
             <div className="flex gap-4 items-center">
                 <Link href="/">Dashboard</Link>
 
