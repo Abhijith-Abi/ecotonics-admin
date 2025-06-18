@@ -42,7 +42,7 @@ function AppSidebar() {
     const items = [
         {
             title: "Dashboard",
-            url: "#",
+            url: "/",
             icon: Home,
         },
         {
@@ -51,32 +51,32 @@ function AppSidebar() {
             icon: Inbox,
             children: [
                 {
-                    title: "Service 1",
-                    url: "#service1",
+                    title: "Categories",
+                    url: "/categories",
                     icon: Inbox,
                 },
                 {
-                    title: "Service 2",
-                    url: "#service2",
+                    title: "Service List",
+                    url: "/services",
                     icon: Inbox,
                 },
             ],
         },
         {
             title: "Workforce",
-            url: "#",
+            url: "/workforce",
             icon: Calendar,
             badge: "14",
         },
         {
             title: "Customers",
-            url: "#",
+            url: "/customers",
             icon: Users,
             badge: "200",
         },
         {
             title: "Masters",
-            url: "#",
+            url: "/masters",
             icon: Settings,
         },
     ];
@@ -132,7 +132,7 @@ function AppSidebar() {
                                                                 <SidebarMenuButton
                                                                     asChild
                                                                 >
-                                                                    <a
+                                                                    <Link
                                                                         href={
                                                                             child.url
                                                                         }
@@ -143,7 +143,7 @@ function AppSidebar() {
                                                                                 child.title
                                                                             }
                                                                         </span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </SidebarMenuButton>
                                                             </SidebarMenuItem>
                                                         )
@@ -155,10 +155,10 @@ function AppSidebar() {
                                 ) : (
                                     <SidebarMenuItem key={item.title}>
                                         <SidebarMenuButton asChild>
-                                            <a href={item.url}>
+                                            <Link href={item.url}>
                                                 <item.icon />
                                                 <span>{item.title}</span>
-                                            </a>
+                                            </Link>
                                         </SidebarMenuButton>
                                         {item.badge && (
                                             <SidebarMenuBadge>
