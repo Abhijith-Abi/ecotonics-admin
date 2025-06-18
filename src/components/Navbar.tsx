@@ -27,8 +27,6 @@ function Navbar() {
                 <BreadcrumbUi />
             </div>
             <div className="flex gap-4 items-center">
-                <Link href="/">Dashboard</Link>
-
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="outline" size="icon">
