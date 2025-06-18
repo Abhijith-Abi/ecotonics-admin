@@ -41,7 +41,7 @@ function BreadcrumbUi() {
                     </BreadcrumbLink>
                 </BreadcrumbItem>
 
-                {breadcrumbItems.map((item, index) => (
+                {breadcrumbItems.map((item) => (
                     <React.Fragment key={item.path}>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>

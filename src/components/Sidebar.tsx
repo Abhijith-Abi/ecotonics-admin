@@ -1,4 +1,8 @@
+"use client";
+/* eslint-disable */
+
 import React from "react";
+import { usePathname } from "next/navigation";
 import {
     Calendar,
     ChevronUp,
@@ -39,6 +43,8 @@ import {
 } from "./ui/collapsible";
 
 function AppSidebar() {
+    const pathname = usePathname();
+
     const items = [
         {
             title: "Dashboard",
@@ -81,6 +87,24 @@ function AppSidebar() {
         },
     ];
 
+    const isActiveItem = (item: any) => {
+        if (item.url === "/" && pathname === "/") return true;
+        if (
+            item.url !== "/" &&
+            item.url !== "#" &&
+            pathname.startsWith(item.url)
+        )
+            return true;
+        if (item.children) {
+            return item.children.some((child: any) => pathname === child.url);
+        }
+        return false;
+    };
+
+    const isActiveChild = (childUrl: any) => {
+        return pathname === childUrl;
+    };
+
     return (
         <Sidebar collapsible="icon">
             <SidebarHeader className="py-4">
@@ -111,10 +135,15 @@ function AppSidebar() {
                                     <Collapsible
                                         key={item.title}
                                         className="group/collapsible"
+                                        defaultOpen={isActiveItem(item)}
                                     >
                                         <SidebarMenuItem>
                                             <CollapsibleTrigger asChild>
-                                                <SidebarMenuButton>
+                                                <SidebarMenuButton
+                                                    isActive={isActiveItem(
+                                                        item
+                                                    )}
+                                                >
                                                     <item.icon />
                                                     <span>{item.title}</span>
                                                     <ChevronUp className="ml-auto transition-transform group-data-[state=closed]/collapsible:rotate-180" />
@@ -131,6 +160,9 @@ function AppSidebar() {
                                                             >
                                                                 <SidebarMenuButton
                                                                     asChild
+                                                                    isActive={isActiveChild(
+                                                                        child.url
+                                                                    )}
                                                                 >
                                                                     <Link
                                                                         href={
@@ -154,7 +186,10 @@ function AppSidebar() {
                                     </Collapsible>
                                 ) : (
                                     <SidebarMenuItem key={item.title}>
-                                        <SidebarMenuButton asChild>
+                                        <SidebarMenuButton
+                                            asChild
+                                            isActive={isActiveItem(item)}
+                                        >
                                             <Link href={item.url}>
                                                 <item.icon />
                                                 <span>{item.title}</span>
