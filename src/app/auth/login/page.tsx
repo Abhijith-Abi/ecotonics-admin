@@ -51,7 +51,7 @@ export default function LoginForm() {
         method: "post",
         endpoint: SIGN_IN,
         submitData: {},
-        redirectPath: "/dashboard",
+        redirectPath: "/",
         isToast: true,
         handleSuccess: (response: any) => {
             if (response.access && response.refresh) {
