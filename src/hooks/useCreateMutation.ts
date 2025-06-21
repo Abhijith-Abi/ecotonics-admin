@@ -4,6 +4,7 @@ import postApiData from "@/utils/api-fetch/post-api-data";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import deleteApiData from "@/utils/api-fetch/delete-api-data";
 import patchApiData from "@/utils/api-fetch/patch-api-data";
+import putApiData from "@/utils/api-fetch/put-api-data";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import useZustandStore from "@/context/zustand-store";
@@ -51,6 +52,8 @@ function useCreateMutation(mutationData: {
                     ? await deleteApiData(finalEndpoint, finalSubmitData)
                     : method === "patch"
                     ? await patchApiData(finalEndpoint, finalSubmitData)
+                    : method === "put"
+                    ? await putApiData(finalEndpoint, finalSubmitData)
                     : await postApiData(finalEndpoint, finalSubmitData);
             const { status_code, message, data, errors } = response;
 

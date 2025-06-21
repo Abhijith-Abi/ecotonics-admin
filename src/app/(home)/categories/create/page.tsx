@@ -1,10 +1,10 @@
 import React from "react";
-import EditUser from "../_components/EditUser";
+import Category from "../_components/Category";
 
 function page() {
     return (
         <>
-            <EditUser />
+            <Category />
         </>
     );
 }

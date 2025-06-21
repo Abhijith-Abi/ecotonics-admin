@@ -15,6 +15,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { MoreHorizontal } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { DeleteDialog } from "@/components/ui/delete-dialog";
+import { useDeleteMutation } from "@/hooks/useDeleteMutation";
+import { API_ENDPOINTS } from "@/constants/api-endpoints";
 
 export const columns = [
     {
@@ -106,8 +109,19 @@ export const columns = [
     {
         id: "actions",
         cell: ({ row }: any) => {
-            const payment = row.original;
+            const slug = row.original?.slug;
+            const name = row.original?.name;
             const router = useRouter();
+
+            const { deleteItem, isPending, reset } = useDeleteMutation({
+                endpoint: `${API_ENDPOINTS.CATEGORIES_SINGLE}${slug}/`,
+                invalidateQueries: [API_ENDPOINTS.CATEGORIES],
+                isToast: true,
+            });
+
+            const handleDelete = () => {
+                deleteItem();
+            };
 
             return (
                 <div className="text-right">
@@ -120,25 +134,30 @@ export const columns = [
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                            <DropdownMenuItem
-                                onClick={() =>
-                                    navigator.clipboard.writeText(payment.id)
-                                }
-                            >
-                                Copy payment ID
-                            </DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem
                                 onClick={() => {
-                                    router.push("/categories/create");
+                                    router.push(`/categories/${slug}/edit`);
                                 }}
                             >
                                 Edit
                             </DropdownMenuItem>
 
-                            <DropdownMenuItem variant="destructive">
-                                Delete
-                            </DropdownMenuItem>
+                            <DeleteDialog
+                                title="Delete Category"
+                                description="Are you sure you want to delete this category? This action cannot be undone."
+                                onDelete={handleDelete}
+                                isLoading={isPending}
+                                itemName={name}
+                                trigger={
+                                    <DropdownMenuItem
+                                        variant="destructive"
+                                        onSelect={(e) => e.preventDefault()}
+                                    >
+                                        Delete
+                                    </DropdownMenuItem>
+                                }
+                            />
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </div>

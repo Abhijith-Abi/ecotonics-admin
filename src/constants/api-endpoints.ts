@@ -4,4 +4,5 @@ export const API_ENDPOINTS = {
 
     //CATEGORIES
     CATEGORIES: "service/categories/",
+    CATEGORIES_SINGLE: "service/category/",
 };
