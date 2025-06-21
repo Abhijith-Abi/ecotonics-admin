@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import React from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
     Calendar,
     ChevronUp,
@@ -12,6 +12,7 @@ import {
     Settings,
     User,
     Users,
+    DoorOpen,
 } from "lucide-react";
 import {
     Sidebar,
@@ -41,9 +42,17 @@ import {
     CollapsibleContent,
     CollapsibleTrigger,
 } from "./ui/collapsible";
+import useAuthStore from "@/context/zustand-store";
 
 function AppSidebar() {
     const pathname = usePathname();
+    const router = useRouter();
+    const { logout, user } = useAuthStore();
+
+    const handleLogout = () => {
+        logout();
+        router.push("/auth/login");
+    };
 
     const items = [
         {
@@ -213,7 +222,7 @@ function AppSidebar() {
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <SidebarMenuButton>
-                                    <User /> Abi Admin
+                                    <User /> {user?.username || "User"}
                                     <ChevronUp className="ml-auto" />
                                 </SidebarMenuButton>
                             </DropdownMenuTrigger>
@@ -224,7 +233,10 @@ function AppSidebar() {
                                 <DropdownMenuItem>
                                     <Settings /> Settings
                                 </DropdownMenuItem>
-                                <DropdownMenuItem variant="destructive">
+                                <DropdownMenuItem
+                                    variant="destructive"
+                                    onClick={handleLogout}
+                                >
                                     <LogOut /> Logout
                                 </DropdownMenuItem>
                             </DropdownMenuContent>

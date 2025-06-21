@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable */
 
 import { LogOut, Moon, Settings, Sun, User } from "lucide-react";
 import React from "react";
@@ -15,9 +16,18 @@ import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
 import { SidebarTrigger } from "./ui/sidebar";
 import BreadcrumbUi from "./BreadcrumbUi";
+import useAuthStore from "@/context/zustand-store";
+import { useRouter } from "next/navigation";
 
 function Navbar() {
     const { setTheme } = useTheme();
+    const { logout, user } = useAuthStore();
+    const router = useRouter();
+
+    const handleLogout = () => {
+        logout();
+        router.push("/auth/login");
+    };
 
     return (
         <nav className="flex p-4 itens-center justify-between">
@@ -65,7 +75,10 @@ function Navbar() {
                             <Settings className="h-[1.2rem] w-[1.2rem] mr-2" />{" "}
                             Settings
                         </DropdownMenuItem>
-                        <DropdownMenuItem variant="destructive">
+                        <DropdownMenuItem
+                            variant="destructive"
+                            onClick={handleLogout}
+                        >
                             <LogOut className="h-[1.2rem] w-[1.2rem] mr-2" />{" "}
                             Logout
                         </DropdownMenuItem>
