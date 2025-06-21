@@ -13,11 +13,8 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
-
 import { MoreHorizontal } from "lucide-react";
-
 import { useRouter } from "next/navigation";
-// import { Badge } from "@/components/ui/badge";
 
 export const columns = [
     {
@@ -41,13 +38,21 @@ export const columns = [
         ),
     },
     {
+        header: "No",
+        accessorKey: "id",
+        cell: ({ row }: any) => {
+            const num = row.index + 1;
+
+            return <div>{num}</div>;
+        },
+    },
+
+    {
         accessorKey: "name",
         header: "Name",
         cell: ({ row }: any) => {
             const name = row.getValue("name");
-            const image =
-                row.original.image ||
-                "https://randomuser.me/api/portraits/lego/1.jpg";
+            const image = row.original.image || "";
 
             return (
                 <div className="flex items-center space-x-3 font-medium text-gray-900 dark:text-gray-100">
@@ -61,45 +66,43 @@ export const columns = [
         },
     },
     {
-        accessorKey: "id",
-        header: "ID",
+        accessorKey: "services",
+        header: "Services",
+        cell: ({ row }: any) => {
+            const count = row.original.services || 0;
+            return (
+                <>
+                    <div>{`${count} Service${count === 1 ? "" : "s"}`}</div>
+                </>
+            );
+        },
+    },
+    {
+        accessorKey: "info",
+        header: "Info",
     },
     {
         accessorKey: "status",
         header: "Status",
         cell: ({ row }: any) => {
-            const status = row.getValue("status");
+            const status: { id: string; name: string } = row.getValue("status");
             return (
                 <div
                     className={cn(`p-1 rounded-md w-max text-xs capitalize `, {
-                        " bg-green-600": status === "active",
-                        " bg-yellow-600": status === "pending",
-                        " bg-red-600": status === "inactive",
+                        " bg-green-600":
+                            status?.name?.toLowerCase() === "active",
+                        " bg-yellow-600":
+                            status?.name?.toLowerCase() === "pending",
+                        " bg-red-600":
+                            status?.name?.toLowerCase() === "inactive",
                     })}
                 >
-                    {status as string}
+                    {status?.name}
                 </div>
-                // <Badge variant="destructive">{status as string}</Badge>
             );
         },
     },
-    {
-        accessorKey: "email",
-        header: "Email",
-    },
-    {
-        accessorKey: "amount",
-        header: () => <div className="text-right">Amount</div>,
-        cell: ({ row }: any) => {
-            const amount = parseFloat(row.getValue("amount"));
-            const formatted = new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: "INR",
-            }).format(amount);
 
-            return <div className="text-right font-medium">{formatted}</div>;
-        },
-    },
     {
         id: "actions",
         cell: ({ row }: any) => {

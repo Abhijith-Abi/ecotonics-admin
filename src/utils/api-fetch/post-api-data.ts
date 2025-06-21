@@ -11,14 +11,11 @@ export default async function postApiData(path: string, bodyData: any) {
 
     await refreshTokenIfNeeded(accessToken, refreshToken);
 
-    // update access token after refresh
     const updatedUser = useAuthStore.getState().user;
     accessToken = updatedUser?.access_token || "";
 
     const formData = new FormData();
 
-    // Recursively append data to formData, excluding keys with empty values
-    // data={A:"name" relation=[{ id: 1, name: "Sohan" }]}
     const appendFormData = (data: any, parentKey = "") => {
         if (Array.isArray(data)) {
             data.forEach((val, index) => {

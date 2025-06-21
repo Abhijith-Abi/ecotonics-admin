@@ -9,12 +9,10 @@ export default async function patchApiData(path: string, bodyData?: any) {
 
     await refreshTokenIfNeeded(accessToken, refreshToken);
 
-    // update access token after refresh
     accessToken = Cookies.get("access_token") || "";
 
     const formData = new FormData();
 
-    // Recursively append data to formData, excluding keys with empty values
     const appendFormData = (data: any, parentKey = "") => {
         if (Array.isArray(data)) {
             data.forEach((val, index) => {
