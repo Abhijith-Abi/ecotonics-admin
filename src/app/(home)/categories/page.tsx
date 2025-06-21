@@ -5,7 +5,6 @@ import { Biohazard, CheckCheck, EqualNot } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { DataTable } from "@/components/DataTable";
 import { columns } from "./_components/columns";
-
 import Header from "./_components/Header";
 
 async function page() {
