@@ -2,12 +2,6 @@
 /* eslint-disable */
 
 import React from "react";
-import {
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-} from "@/components/ui/sheet";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -49,16 +43,16 @@ const formSchema = z.object({
     id: z.string().min(1, { message: "ID is required!" }),
 });
 
-function EditUser({ data }: { data: any }) {
+function EditUser({ data }: { data?: any }) {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            name: data.name,
-            email: data.email,
-            image: data.image,
-            status: data.status,
-            ammount: data.amount,
-            id: data.id,
+            name: data?.name || "",
+            email: data?.email || "",
+            image: data?.image || "",
+            status: data?.status || "active",
+            ammount: data?.amount || 0,
+            id: data?.id || "",
         },
     });
 
@@ -67,15 +61,21 @@ function EditUser({ data }: { data: any }) {
     }
 
     return (
-        <SheetContent>
-            <SheetHeader>
-                <SheetTitle className="mb-4">Edit User</SheetTitle>
-                <SheetDescription>
-                    <Form {...form}>
-                        <form
-                            onSubmit={form.handleSubmit(onSubmit)}
-                            className="space-y-8"
-                        >
+        <div className="mx-auto p-6">
+            <div className=" rounded-lg shadow-lg border  p-6 md:p-8">
+                <div className="mb-6">
+                    <h2 className="text-2xl font-semibold mb-2">
+                        Add Category
+                    </h2>
+                    <p className="text-xs">Update category information below</p>
+                </div>
+
+                <Form {...form}>
+                    <form
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className="space-y-6"
+                    >
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <FormField
                                 control={form.control}
                                 name="name"
@@ -169,14 +169,34 @@ function EditUser({ data }: { data: any }) {
                                     </FormItem>
                                 )}
                             />
-                            <Button type="submit" variant={"secondary"}>
+                            <FormField
+                                control={form.control}
+                                name="id"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>ID</FormLabel>
+                                        <FormControl>
+                                            <Input {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="pt-4 border-t">
+                            <Button
+                                type="submit"
+                                variant={"secondary"}
+                                className="w-full"
+                            >
                                 Submit
                             </Button>
-                        </form>
-                    </Form>
-                </SheetDescription>
-            </SheetHeader>
-        </SheetContent>
+                        </div>
+                    </form>
+                </Form>
+            </div>
+        </div>
     );
 }
 

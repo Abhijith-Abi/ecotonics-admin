@@ -1,8 +1,6 @@
 "use client";
 /* eslint-disable */
 
-import { useState } from "react";
-
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
@@ -13,13 +11,12 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
 import { MoreHorizontal } from "lucide-react";
 
-import EditUser from "./EditUser";
+import { useRouter } from "next/navigation";
 // import { Badge } from "@/components/ui/badge";
 
 export const columns = [
@@ -107,7 +104,7 @@ export const columns = [
         id: "actions",
         cell: ({ row }: any) => {
             const payment = row.original;
-            const [isOpen, setIsOpen] = useState(false);
+            const router = useRouter();
 
             return (
                 <div className="text-right">
@@ -128,7 +125,11 @@ export const columns = [
                                 Copy payment ID
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem onClick={() => setIsOpen(true)}>
+                            <DropdownMenuItem
+                                onClick={() => {
+                                    router.push("/categories/create");
+                                }}
+                            >
                                 Edit
                             </DropdownMenuItem>
 
@@ -137,9 +138,6 @@ export const columns = [
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
-                    <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                        <EditUser data={row?.original} />
-                    </Sheet>
                 </div>
             );
         },

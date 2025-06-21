@@ -1,9 +1,12 @@
 /* eslint-disable */
+
 import React from "react";
 import { Biohazard, CheckCheck, EqualNot } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { DataTable } from "@/components/DataTable";
 import { columns } from "./_components/columns";
+
+import Header from "./_components/Header";
 
 async function page() {
     async function getData(): Promise<any[]> {
@@ -311,7 +314,7 @@ async function page() {
                 </Card>
             </div>
             <div className="py-10">
-                <h2 className="text-2xl font-bold mb-4">Service Categories</h2>
+                <Header />
                 <DataTable columns={columns} data={data} />
             </div>
         </>
