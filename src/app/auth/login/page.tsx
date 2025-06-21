@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/card";
 import useCreateMutation from "@/hooks/useCreateMutation";
 import useAuthStore from "@/context/zustand-store";
+import { API_ENDPOINTS } from "@/constants/api-endpoints";
 
 const formSchema = z.object({
     username: z.string().min(2, {
@@ -36,6 +37,8 @@ const formSchema = z.object({
 
 export default function LoginForm() {
     const { login } = useAuthStore();
+    const { SIGN_IN } = API_ENDPOINTS;
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -46,14 +49,13 @@ export default function LoginForm() {
 
     const { mutate, isPending } = useCreateMutation({
         method: "post",
-        endpoint: "auth/token/",
+        endpoint: SIGN_IN,
         submitData: {},
         redirectPath: "/dashboard",
         isToast: true,
         handleSuccess: (response: any) => {
             if (response.access && response.refresh) {
                 const username = form.getValues("username");
-
                 login({
                     username,
                     access_token: response.access,
