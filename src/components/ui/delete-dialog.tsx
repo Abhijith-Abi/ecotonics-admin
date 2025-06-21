@@ -33,19 +33,19 @@ export function DeleteDialog({
     itemName,
 }: DeleteDialogProps) {
     const [open, setOpen] = React.useState(false);
-
     const handleDelete = async () => {
         try {
             await onDelete();
-
-            setOpen(isLoading === false);
+            setTimeout(() => setOpen(false), 400);
         } catch (error) {
             console.error("Delete failed:", error);
         }
     };
 
     const handleOpenChange = (newOpen: boolean) => {
-        setOpen(newOpen);
+        if (!isLoading) {
+            setOpen(newOpen);
+        }
     };
 
     const defaultTrigger = (

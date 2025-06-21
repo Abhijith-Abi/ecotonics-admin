@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import { DeleteDialog } from "@/components/ui/delete-dialog";
 import { useDeleteMutation } from "@/hooks/useDeleteMutation";
 import { API_ENDPOINTS } from "@/constants/api-endpoints";
+import { useState } from "react";
 
 export const columns = [
     {
@@ -112,6 +113,7 @@ export const columns = [
             const slug = row.original?.slug;
             const name = row.original?.name;
             const router = useRouter();
+            const [dropdownOpen, setDropdownOpen] = useState(false);
 
             const { deleteItem, isPending, reset } = useDeleteMutation({
                 endpoint: `${API_ENDPOINTS.CATEGORIES_SINGLE}${slug}/`,
@@ -119,13 +121,17 @@ export const columns = [
                 isToast: true,
             });
 
-            const handleDelete = () => {
-                deleteItem();
+            const handleDelete = async () => {
+                await deleteItem();
+                setDropdownOpen(false);
             };
 
             return (
                 <div className="text-right">
-                    <DropdownMenu>
+                    <DropdownMenu
+                        open={dropdownOpen}
+                        onOpenChange={setDropdownOpen}
+                    >
                         <DropdownMenuTrigger asChild>
                             <Button variant="secondary" className="h-8 w-8 p-0">
                                 <span className="sr-only">Open menu</span>

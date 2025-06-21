@@ -15,6 +15,7 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { API_ENDPOINTS } from "@/constants/api-endpoints";
 import useCreateMutation from "@/hooks/useCreateMutation";
@@ -112,7 +113,7 @@ function Category({ slug }: { slug?: any }) {
                                 <p>Loading category data...</p>
                             </div>
                         ) : (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
                                 <>
                                     <FormField
                                         control={form.control}
@@ -142,7 +143,7 @@ function Category({ slug }: { slug?: any }) {
                                                     Description
                                                 </FormLabel>
                                                 <FormControl>
-                                                    <Input {...field} />
+                                                    <Textarea {...field} />
                                                 </FormControl>
                                                 <FormDescription>
                                                     Enter a brief description of
