@@ -9,7 +9,7 @@ function Header() {
     return (
         <>
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold mb-4">Service Categories</h2>
+                <h2 className="text-2xl font-bold ">Service Categories</h2>
                 <Button
                     onClick={() => {
                         router.push("/categories/create");
