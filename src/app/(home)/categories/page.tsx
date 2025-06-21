@@ -5,7 +5,7 @@ import { Biohazard, CheckCheck, EqualNot } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { DataTable } from "@/components/DataTable";
 import { columns } from "./_components/columns";
-import Header from "./_components/Header";
+import Header from "@/components/Header";
 
 async function page() {
     async function getData(): Promise<any[]> {
@@ -313,7 +313,12 @@ async function page() {
                 </Card>
             </div>
             <div className="py-10">
-                <Header />
+                <Header
+                    title="Categories List"
+                    buttonText="Add New Category"
+                    buttonRoute="/categories/create"
+                />
+
                 <DataTable columns={columns} data={data} />
             </div>
         </>
