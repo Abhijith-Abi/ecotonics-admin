@@ -1,76 +1,79 @@
 <div align="center">
   
-# 🌟 Ecotonics Admin Dashboard
+# 🌈✨ Ecotonics Admin Dashboard
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin: 20px 0;">
-  <img src="https://img.shields.io/badge/Next.js-15.3.3-black?style=for-the-badge&logo=next.js" alt="Next.js" />
-  <img src="https://img.shields.io/badge/React-19.0.0-blue?style=for-the-badge&logo=react" alt="React" />
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/TailwindCSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css" alt="TailwindCSS" />
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2Z2b2Z2d3F2d3F2d3F2d3F2d3F2d3F2d3F2d3F2d3F2d3F2/g9582DNuQppxC/giphy.gif" width="180" alt="Animated Dashboard" style="margin-bottom: 20px;" />
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin: 20px 0; flex-wrap: wrap;">
+  <img src="https://img.shields.io/badge/Next.js-15.3.3-black?style=for-the-badge&logo=next.js&logoColor=white&labelColor=black" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/TailwindCSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+  <img src="https://img.shields.io/badge/Animated-README-ff69b4?style=for-the-badge&logo=github&logoColor=white" alt="Animated" />
 </div>
 
-<div style="font-size: 18px; color: #666; margin: 20px 0;">
-  🚀 Modern Admin Dashboard with Beautiful UI & Smooth Animations
+<div style="font-size: 20px; color: #ff69b4; margin: 20px 0; font-weight: bold;">
+  🚀 Modern Admin Dashboard with <span style="color:#f59e42;">Beautiful UI</span> & <span style="color:#38bdf8;">Smooth Animations</span>
 </div>
 
-<div style="display: flex; justify-content: center; gap: 15px; margin: 30px 0;">
-  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px 25px; border-radius: 25px; color: white; font-weight: bold; box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);">
-    ✨ Beautiful UI
-  </div>
-  <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 15px 25px; border-radius: 25px; color: white; font-weight: bold; box-shadow: 0 8px 32px rgba(240, 147, 251, 0.3);">
-    🎨 Modern Design
-  </div>
-  <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 15px 25px; border-radius: 25px; color: white; font-weight: bold; box-shadow: 0 8px 32px rgba(79, 172, 254, 0.3);">
-    ⚡ Lightning Fast
-  </div>
-</div>
-
-</div>
+<img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="100%" alt="Colorful Animation" style="border-radius: 20px; margin: 20px 0;" />
 
 ---
 
 ## 🎯 Features
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0;">
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1000&color=F59E42&center=true&vCenter=true&width=435&lines=🔐+Authentication+System;📊+Categories+Management;🎨+Modern+UI+Components;🔄+State+Management" alt="Typing SVG" />
+</div>
 
-<div style="background: linear-gradient(145deg, #f8fafc, #e2e8f0); padding: 25px; border-radius: 15px; border-left: 4px solid #3b82f6;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 30px 0;">
 
-### 🔐 Authentication System
-- Secure login with token management
-- Automatic token refresh
-- Protected routes with middleware
+<img src="https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif" width="180" alt="Secure" />
+
+<div style="background: linear-gradient(135deg, #f59e42 0%, #fbbf24 100%); padding: 20px; border-radius: 15px; color: white; font-weight: bold; min-width: 220px; box-shadow: 0 8px 32px rgba(245, 158, 66, 0.2);">
+🔐 <b>Authentication System</b><br>
+<span style="font-weight: normal;">
+- Secure login with token management<br>
+- Automatic token refresh<br>
+- Protected routes with middleware<br>
 - Beautiful login interface
-
+</span>
 </div>
 
-<div style="background: linear-gradient(145deg, #f8fafc, #e2e8f0); padding: 25px; border-radius: 15px; border-left: 4px solid #10b981;">
+<img src="https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif" width="180" alt="Data Table" />
 
-### 📊 Categories Management
-- Full CRUD operations for categories
-- Beautiful data tables with pagination
-- Search and filter functionality
+<div style="background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%); padding: 20px; border-radius: 15px; color: white; font-weight: bold; min-width: 220px; box-shadow: 0 8px 32px rgba(56, 189, 248, 0.2);">
+📊 <b>Categories Management</b><br>
+<span style="font-weight: normal;">
+- Full CRUD operations for categories<br>
+- Beautiful data tables with pagination<br>
+- Search and filter functionality<br>
 - Responsive design for all devices
-
+</span>
 </div>
 
-<div style="background: linear-gradient(145deg, #f8fafc, #e2e8f0); padding: 25px; border-radius: 15px; border-left: 4px solid #f59e0b;">
+<img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" width="180" alt="UI Animation" />
 
-### 🎨 Modern UI Components
-- shadcn/ui components
-- Dark/Light theme support
-- Smooth animations and transitions
+<div style="background: linear-gradient(135deg, #f472b6 0%, #f59e42 100%); padding: 20px; border-radius: 15px; color: white; font-weight: bold; min-width: 220px; box-shadow: 0 8px 32px rgba(244, 114, 182, 0.2);">
+🎨 <b>Modern UI Components</b><br>
+<span style="font-weight: normal;">
+- shadcn/ui components<br>
+- Dark/Light theme support<br>
+- Smooth animations and transitions<br>
 - Responsive sidebar and navigation
-
+</span>
 </div>
 
-<div style="background: linear-gradient(145deg, #f8fafc, #e2e8f0); padding: 25px; border-radius: 15px; border-left: 4px solid #8b5cf6;">
+<img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" width="180" alt="State Management" />
 
-### 🔄 State Management
-- Zustand for global state
-- React Query for server state
-- Optimistic updates
+<div style="background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%); padding: 20px; border-radius: 15px; color: white; font-weight: bold; min-width: 220px; box-shadow: 0 8px 32px rgba(167, 139, 250, 0.2);">
+🔄 <b>State Management</b><br>
+<span style="font-weight: normal;">
+- Zustand for global state<br>
+- React Query for server state<br>
+- Optimistic updates<br>
 - Error handling with beautiful modals
-
+</span>
 </div>
 
 </div>
@@ -79,69 +82,29 @@
 
 ## 🛠️ Tech Stack
 
-<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin: 30px 0;">
-
-<div style="text-align: center; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); min-width: 120px;">
-  <div style="font-size: 24px; margin-bottom: 10px;">⚛️</div>
-  <div style="font-weight: bold; color: #333;">Next.js 15</div>
-  <div style="font-size: 12px; color: #666;">App Router</div>
-</div>
-
-<div style="text-align: center; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); min-width: 120px;">
-  <div style="font-size: 24px; margin-bottom: 10px;">🎨</div>
-  <div style="font-weight: bold; color: #333;">Tailwind CSS</div>
-  <div style="font-size: 12px; color: #666;">v4.0</div>
-</div>
-
-<div style="text-align: center; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); min-width: 120px;">
-  <div style="font-size: 24px; margin-bottom: 10px;">🔧</div>
-  <div style="font-weight: bold; color: #333;">TypeScript</div>
-  <div style="font-size: 12px; color: #666;">Type Safe</div>
-</div>
-
-<div style="text-align: center; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); min-width: 120px;">
-  <div style="font-size: 24px; margin-bottom: 10px;">🎯</div>
-  <div style="font-weight: bold; color: #333;">shadcn/ui</div>
-  <div style="font-size: 12px; color: #666;">Components</div>
-</div>
-
-<div style="text-align: center; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); min-width: 120px;">
-  <div style="font-size: 24px; margin-bottom: 10px;">🔄</div>
-  <div style="font-weight: bold; color: #333;">React Query</div>
-  <div style="font-size: 12px; color: #666;">TanStack</div>
-</div>
-
-<div style="text-align: center; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); min-width: 120px;">
-  <div style="font-size: 24px; margin-bottom: 10px;">📦</div>
-  <div style="font-weight: bold; color: #333;">Zustand</div>
-  <div style="font-size: 12px; color: #666;">State</div>
-</div>
-
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=nextjs,react,typescript,tailwind,radixui,vercel" alt="Tech stack icons" />
 </div>
 
 ---
 
 ## 🚀 Quick Start
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; color: white; margin: 30px 0;">
+> <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="40" style="vertical-align: middle;" /> <b>Get started in seconds!</b>
 
-### 1. Clone the Repository
 ```bash
+# 1. Clone the Repository
 git clone https://github.com/yourusername/ecotonics-admin.git
 cd ecotonics-admin
-```
 
-### 2. Install Dependencies
-```bash
+# 2. Install Dependencies
 npm install
 # or
 yarn install
 # or
 pnpm install
-```
 
-### 3. Run Development Server
-```bash
+# 3. Run Development Server
 npm run dev
 # or
 yarn dev
@@ -149,65 +112,49 @@ yarn dev
 pnpm dev
 ```
 
-### 4. Open Your Browser
-Navigate to [http://localhost:3000](http://localhost:3000) to see the magic! ✨
+Open [http://localhost:3000](http://localhost:3000) to see the magic! ✨
 
-</div>
+---
+
+## 📸 Demo
+
+> <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="40" style="vertical-align: middle;" /> <b>Live Preview</b>
+
+![Dashboard Demo](https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif)
 
 ---
 
 ## 📁 Project Structure
 
-```
-ecotonics-admin/
-├── 📁 src/
-│   ├── 📁 app/                    # Next.js App Router
-│   │   ├── 📁 (home)/            # Protected home routes
-│   │   │   ├── 📁 categories/    # Categories management
-│   │   │   └── 📁 services/      # Services pages
-│   │   └── 📁 auth/              # Authentication pages
-│   ├── 📁 components/            # Reusable components
-│   │   ├── 📁 ui/               # shadcn/ui components
-│   │   └── 📁 customize-components/ # Custom components
-│   ├── 📁 hooks/                # Custom React hooks
-│   ├── 📁 context/              # Global state management
-│   ├── 📁 utils/                # Utility functions
-│   └── 📁 constants/            # App constants
-├── 📁 public/                   # Static assets
-└── 📄 Configuration files
+```diff
++ ecotonics-admin/
++ ├── src/
++ │   ├── app/                    # Next.js App Router
++ │   │   ├── (home)/            # Protected home routes
++ │   │   │   ├── categories/    # Categories management
++ │   │   │   └── services/      # Services pages
++ │   │   └── auth/              # Authentication pages
++ │   ├── components/            # Reusable components
++ │   │   ├── ui/                # shadcn/ui components
++ │   │   └── customize-components/ # Custom components
++ │   ├── hooks/                 # Custom React hooks
++ │   ├── context/               # Global state management
++ │   ├── utils/                 # Utility functions
++ │   └── constants/             # App constants
++ ├── public/                    # Static assets
++ └── Configuration files
 ```
 
 ---
 
 ## 🎨 Available Scripts
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 30px 0;">
-
-<div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-  <div style="font-weight: bold; color: #3b82f6; margin-bottom: 5px;">🚀 Development</div>
-  <code>npm run dev</code>
-  <div style="font-size: 12px; color: #666; margin-top: 5px;">Start development server with Turbopack</div>
-</div>
-
-<div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-  <div style="font-weight: bold; color: #10b981; margin-bottom: 5px;">🏗️ Build</div>
-  <code>npm run build</code>
-  <div style="font-size: 12px; color: #666; margin-top: 5px;">Build for production</div>
-</div>
-
-<div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-  <div style="font-weight: bold; color: #f59e0b; margin-bottom: 5px;">🚀 Start</div>
-  <code>npm run start</code>
-  <div style="font-size: 12px; color: #666; margin-top: 5px;">Start production server</div>
-</div>
-
-<div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
-  <div style="font-weight: bold; color: #ef4444; margin-bottom: 5px;">🔍 Lint</div>
-  <code>npm run lint</code>
-  <div style="font-size: 12px; color: #666; margin-top: 5px;">Run ESLint</div>
-</div>
-
-</div>
+| Script           | Description                      |
+|------------------|----------------------------------|
+| `npm run dev`    | 🚀 Start development server       |
+| `npm run build`  | 🏗️  Build for production         |
+| `npm run start`  | 🚀 Start production server        |
+| `npm run lint`   | 🔍 Run ESLint                    |
 
 ---
 
@@ -241,7 +188,9 @@ ecotonics-admin/
 
 ## 🤝 Contributing
 
-<div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 25px; border-radius: 15px; color: white; margin: 30px 0;">
+<div align="center">
+  <img src="https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif" width="120" alt="Contribute" />
+</div>
 
 We welcome contributions! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
@@ -251,8 +200,6 @@ We welcome contributions! Please feel free to submit a Pull Request. For major c
 3. 💾 Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
 5. 🔄 Open a Pull Request
-
-</div>
 
 ---
 
