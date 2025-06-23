@@ -10,7 +10,6 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { MoreHorizontal } from "lucide-react";
@@ -21,26 +20,6 @@ import { API_ENDPOINTS } from "@/constants/api-endpoints";
 import { useState } from "react";
 
 export const columns = [
-    {
-        id: "select",
-        header: ({ table }: any) => (
-            <Checkbox
-                onCheckedChange={(value) =>
-                    table.toggleAllPageRowsSelected(!!value)
-                }
-                checked={
-                    table.getIsAllRowsSelected() ||
-                    (table.getIsSomeRowsSelected() && "indeterminate")
-                }
-            />
-        ),
-        cell: ({ row }: any) => (
-            <Checkbox
-                onCheckedChange={(value) => row.toggleSelected(!!value)}
-                checked={row.getIsSelected()}
-            />
-        ),
-    },
     {
         header: "No",
         accessorKey: "id",
